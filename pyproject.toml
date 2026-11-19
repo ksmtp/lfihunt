@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lfihunt"
+version = "1.0.0"
+description = "LFI / path traversal finder and file reader (Linux + Windows), with per-user loot enumeration. OSCP-safe."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["requests"]
+keywords = ["lfi", "path-traversal", "pentest", "oscp", "security", "scanner"]
+
+[project.urls]
+Homepage = "https://github.com/ksmtp/lfihunt"
+
+[project.scripts]
+lfihunt = "lfihunt:main"
+
+[tool.setuptools]
+py-modules = ["lfihunt"]

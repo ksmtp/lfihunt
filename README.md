@@ -6,13 +6,27 @@ Find LFI / path traversal on Linux **and** Windows targets, then read files thro
 (`data://`, `expect://`, `php://input`), no log poisoning, no auto-shells. Those
 show up as *manual* next steps.
 
+## Install
+
 ```bash
-pip install requests
-python3 lfihunt.py -u 'http://<IP>/logs?file=app.log'            # test every param
-python3 lfihunt.py -u 'http://<IP>/logs?file=app.log' --shell    # find, then read files interactively
-python3 lfihunt.py -u 'http://<IP>/' --os windows                # no params -> guess ~45 names
-python3 lfihunt.py -r burp.req                                   # Burp "Copy to file"
+pipx install git+https://github.com/ksmtp/lfihunt          # isolated, puts `lfihunt` on PATH
 ```
+or, without installing:
+```bash
+git clone https://github.com/ksmtp/lfihunt && cd lfihunt
+pip install requests
+python3 lfihunt.py -u 'http://<IP>/logs?file=app.log'
+```
+
+## Usage
+
+```bash
+lfihunt -u 'http://<IP>/logs?file=app.log'            # test every param
+lfihunt -u 'http://<IP>/logs?file=app.log' --shell    # find, then read files interactively
+lfihunt -u 'http://<IP>/' --os windows                # no params -> guess ~45 names
+lfihunt -r burp.req                                   # Burp "Copy to file"
+```
+(run as `python3 lfihunt.py ...` if you cloned instead of installing)
 
 ## Injection point (first match wins)
 
