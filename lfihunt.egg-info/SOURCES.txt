@@ -1,9 +1,0 @@
-README.md
-lfihunt.py
-pyproject.toml
-lfihunt.egg-info/PKG-INFO
-lfihunt.egg-info/SOURCES.txt
-lfihunt.egg-info/dependency_links.txt
-lfihunt.egg-info/entry_points.txt
-lfihunt.egg-info/requires.txt
-lfihunt.egg-info/top_level.txt
